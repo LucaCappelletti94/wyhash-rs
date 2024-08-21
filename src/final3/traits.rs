@@ -5,6 +5,7 @@ use rand_core::{impls, Error, RngCore, SeedableRng};
 
 /// WyHash hasher builder
 #[derive(Clone, Debug, PartialEq, Eq, Ord, PartialOrd, Copy, Hash)]
+#[cfg_attr(feature = "mem_dbg", derive(mem_dbg::MemSize, mem_dbg::MemDbg))]
 pub struct WyHasherBuilder {
     seed: u64,
     secret: [u64; 4],
